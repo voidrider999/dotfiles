@@ -3,8 +3,11 @@
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
 <menu id="apps-term-menu" label="Terminals">
- <item label="Xterm">
-    <action name="Execute"><command>xterm -e tmux</command></action>
+  <item label="Alacritty">
+    <action name="Execute"><command>alacritty</command></action>
+  </item>
+  <item label="Xterm">
+    <action name="Execute"><command>xterm</command></action>
   </item>
 </menu>
 
