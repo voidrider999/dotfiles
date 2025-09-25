@@ -1,6 +1,9 @@
-xrdb -load ~/.Xresources &
-setxkbmap -layout us,ru -option grp:caps_toggle &
-# заменить клавишу меню на правый контрол
-xkbcomp $DISPLAY - | sed 's/<COMP> = 135;/<COMP> = 105;/; s/<RCTL> = 105;/<RCTL> = 135;/' | xkbcomp - $DISPLAY
-exec openbox-session
+setkbd()
+{
+	setxkbmap -layout us,ru -option grp:caps_toggle
+	xkbcomp $DISPLAY - | sed '/<COMP> = 135;/d; s/<RCTL> = 105;/<RCTL> = 135;/' | xkbcomp - $DISPLAY
+}
 
+xrdb -load .Xresources &
+setkbd &
+exec openbox-session
