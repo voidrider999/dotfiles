@@ -10,6 +10,8 @@ alias l='ls -al'
 # alias grep='grep --color=auto'
 # PS1='[\u@\h \W]\$ '
 
+alias aider='docker run -it --rm --user $(id -u):$(id -g) --volume $(pwd):/app --network host -e OLLAMA_API_BASE=http://127.0.0.1:11434 docker.io/paulgauthier/aider-full --model ollama/qwen2.5-coder:7b-instruct-q4_K_M --edit-format whole --no-browser'
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 start-conda() {
