@@ -1,2 +1,7 @@
 [env]
 TERM = "xterm-256color"
+
+[[keyboard.bindings]]
+key = "Insert"
+mods = "Shift"
+action = "Paste"
