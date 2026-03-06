@@ -1,0 +1,16 @@
+[Unit]
+Description=Voxtype Russian (Pause)
+After=graphical-session.target
+
+[Service]
+Environment=DISPLAY=:0
+# Изоляция через XDG_RUNTIME_DIR обязательна для запуска второго демона
+Environment=XDG_RUNTIME_DIR=/tmp/voxtype-ru
+# Указываем путь ко второму конфигу в той же папке
+ExecStart=%h/w/voxtype/target/release/voxtype --config %h/.config/voxtype/config-ru.toml daemon
+Restart=always
+# Очистка временной папки перед стартом, чтобы не было ошибки LockExists
+ExecStartPre=/usr/bin/mkdir -p /tmp/voxtype-ru
+
+[Install]
+WantedBy=default.target

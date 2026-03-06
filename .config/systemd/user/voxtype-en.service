@@ -1,0 +1,11 @@
+[Unit]
+Description=Voxtype English (ScrollLock)
+After=graphical-session.target
+
+[Service]
+Environment=DISPLAY=:0
+ExecStart=%h/w/voxtype/target/release/voxtype daemon
+Restart=always
+
+[Install]
+WantedBy=default.target
